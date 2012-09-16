@@ -3,6 +3,9 @@ My-textarea
 
 Dynamic Textarea - automatic content height
 
+
+Author: PhDr. Matej Lednár, PhD. (c) 2012 
+
      function checkHeight() {
         this.style.color = "black";
         var content = this.value;
