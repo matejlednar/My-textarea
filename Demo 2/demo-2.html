@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dynamic Textarea</title>
+    <meta charset="utf-8">
+    <meta name="author" content="PhDr. Matej Lednár, PhD."/>
+    <link rel="StyleSheet" type="text/css" href="../../MyHighlighter/default.css"/> 
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.3/dojo/dojo.js" type="text/javascript" data-dojo-config="parseOnLoad:true, async:1, locale: 'sk-sk'"></script>
+    <script src="../../MyHighlighter/my-highlighter.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.0.js"></script>    
+    <style>
+      textarea {
+        overflow : hidden;
+        resize: none;
+      }
+      .my-table-left-column {
+        display : none;
+      }
+      .my-columns-separator {
+        border : none;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Dynamic Textarea - automatic content height</h3>
+    <h4>Author: Matej Lednár</h4>
+    <h4>white-space: pre-wrap; sets output width</h4>
+    <textarea name="textarea" id="textareaId" rows="1" cols="60">
+fe
+fe
+ee
+ee
+ee    </textarea>
+    <script class="code">
+      
+      function checkHeight() {
+        this.style.color = "black";
+        var content = this.value;
+        var charsAtline = this.cols  * 1; // number conversion
+        var lineChecker = content.split(/\n/g);
+        var breaks = lineChecker;
+        var lineStatus = true;  // line is ok
+
+        // check if exists \n
+        if (breaks) {
+          breaks = breaks.length;
+        }
+        else {
+          breaks = 1;               // default number of lines
+          lineChecker = [];         // default state
+          lineChecker[0] = content; // process first line
+        }
+
+        for (var i = 0; i < lineChecker.length; i++) {
+          var check = lineChecker[i];
+          var length = check.length;
+
+          if (length > charsAtline) {
+            var tmp = []; // creates new lines
+            var leftOver = length % charsAtline;
+            for (var j = 0; j < Math.ceil(length / charsAtline); j++) {
+              if ((length - (j * charsAtline)) > leftOver ) {
+                tmp[j] = check.substring(j * charsAtline, (j + 1) * charsAtline) + "\n";
+              }
+              else {
+                tmp[j] = check.substring((j * charsAtline));
+                this.rows = (this.rows * 1) - 1;
+              }
+              this.rows = (this.rows * 1) + 1;
+            }
+            lineChecker[i] = tmp.join("");
+            this.value = lineChecker.join("\n");            
+            lineStatus = false;   // line and all content were updated
+          }
+        }
+        if (lineStatus) {
+          this.rows = breaks;
+        }
+      }
+
+      // jQuery library statements
+      $("textarea").on("keyup", checkHeight);
+      
+      // set height of the textarea
+      $("textarea").keyup();
+
+    </script>
+  </body>
+</html>
