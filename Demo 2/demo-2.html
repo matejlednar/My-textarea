@@ -4,33 +4,24 @@
     <title>Dynamic Textarea</title>
     <meta charset="utf-8">
     <meta name="author" content="PhDr. Matej Lednár, PhD."/>
-    <link rel="StyleSheet" type="text/css" href="../../MyHighlighter/default.css"/> 
-    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.3/dojo/dojo.js" type="text/javascript" data-dojo-config="parseOnLoad:true, async:1, locale: 'sk-sk'"></script>
-    <script src="../../MyHighlighter/my-highlighter.js"></script>
     <script src="http://code.jquery.com/jquery-1.8.0.js"></script>    
     <style>
       textarea {
         overflow : hidden;
         resize: none;
       }
-      .my-table-left-column {
-        display : none;
-      }
-      .my-columns-separator {
-        border : none;
-      }
     </style>
   </head>
   <body>
     <h3>Dynamic Textarea - automatic content height</h3>
+    <h4>Default value. Used jQuery library for key event.</h4>
     <h4>Author: Matej Lednár</h4>
-    <h4>white-space: pre-wrap; sets output width</h4>
     <textarea name="textarea" id="textareaId" rows="1" cols="60">
-fe
-fe
-ee
-ee
-ee    </textarea>
+Line 1
+Line 2
+Line 3
+Line 4
+Line 5</textarea>
     <script class="code">
       
       function checkHeight() {
@@ -41,7 +32,7 @@ ee    </textarea>
         var breaks = lineChecker;
         var lineStatus = true;  // line is ok
 
-        // check if exists \n
+        // checks if exists \n
         if (breaks) {
           breaks = breaks.length;
         }
