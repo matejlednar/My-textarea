@@ -54,7 +54,6 @@ Author: PhDr. Matej Lednár, PhD. (c) 2012
 
 Webs: 
 - work.mldgroup.com
-- matej.lednar.mldgroup.com
 - expertcode.mldgroup.com
 - howto.mldgroup.com /* replace expertcode */
      
