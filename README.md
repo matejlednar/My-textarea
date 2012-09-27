@@ -6,7 +6,7 @@ Dynamic Textarea - automatic content height
 
 Author: PhDr. Matej Lednár, PhD. (c) 2012 
 
-     function checkHeight() {
+     function createDynamicTextarea() {
         this.style.color = "black";
         var content = this.value;
         var charsAtline = this.cols  * 1; // number conversion
@@ -54,6 +54,6 @@ Author: PhDr. Matej Lednár, PhD. (c) 2012
 
 Webs: 
 - work.mldgroup.com
-- expertcode.mldgroup.com
-- howto.mldgroup.com /* replace expertcode */
+- expertcode.mldgroup.com /* will be replaced by howto */
+- howto.mldgroup.com
      

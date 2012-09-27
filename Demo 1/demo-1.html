@@ -19,7 +19,7 @@
     <textarea name="textarea" id="textareaId" rows="1" cols="60"></textarea>
     <script class="code">
       
-      function checkHeight() {
+      function createDynamicTextarea() {
         this.style.color = "black";
         var content = this.value;
         var charsAtline = this.cols  * 1; // number conversion
@@ -65,7 +65,7 @@
       }
 
       // jQuery library statements
-      $("textarea").on("keyup", checkHeight);
+      $("textarea").on("keyup", createDynamicTextarea);
       
 
 
