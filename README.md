@@ -9,7 +9,7 @@ Author: PhDr. Matej Lednár, PhD. (c) 2012
      function createDynamicTextarea() {
         this.style.color = "black";
         var content = this.value;
-        var charsAtline = this.cols  * 1; // number conversion
+        var charsAtLine = this.cols  * 1; // number conversion
         var lineChecker = content.split(/\n/g);
         var breaks = lineChecker;
         var lineStatus = true;  // line is ok
@@ -28,15 +28,15 @@ Author: PhDr. Matej Lednár, PhD. (c) 2012
           var check = lineChecker[i];
           var length = check.length;
 
-          if (length > charsAtline) {
+          if (length > charsAtLine) {
             var tmp = []; // creates new lines
-            var leftOver = length % charsAtline;
-            for (var j = 0; j < Math.ceil(length / charsAtline); j++) {
-              if ((length - (j * charsAtline)) > leftOver ) {
-                tmp[j] = check.substring(j * charsAtline, (j + 1) * charsAtline) + "\n";
+            var leftOver = length % charsAtLine;
+            for (var j = 0; j < Math.ceil(length / charsAtLine); j++) {
+              if ((length - (j * charsAtLine)) > leftOver ) {
+                tmp[j] = check.substring(j * charsAtLine, (j + 1) * charsAtLine) + "\n";
               }
               else {
-                tmp[j] = check.substring((j * charsAtline));
+                tmp[j] = check.substring((j * charsAtLine));
                 this.rows = (this.rows * 1) - 1;
               }
               this.rows = (this.rows * 1) + 1;
