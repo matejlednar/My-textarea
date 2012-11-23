@@ -52,8 +52,7 @@ Author: PhDr. Matej Lednár, PhD. (c) 2012
       }
 
 
-Webs: 
+Web sites: 
 - work.mldgroup.com
-- expertcode.mldgroup.com /* will be replaced by howto */
-- howto.mldgroup.com
+- how-to.mldgroup.com 
      
