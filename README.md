@@ -1,11 +1,9 @@
-My-textarea
-===========
+# My-textarea
 
 Dynamic Textarea - automatic content height
 
-
 Author: PhDr. Matej Lednár, PhD. (c) 2012 
-
+```
      function createDynamicTextarea() {
         this.style.color = "black";
         var content = this.value;
@@ -50,7 +48,7 @@ Author: PhDr. Matej Lednár, PhD. (c) 2012
           this.rows = breaks;
         }
       }
-
+```
 
 Web sites: 
 - work.mldgroup.com
