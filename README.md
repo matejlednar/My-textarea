@@ -41,7 +41,7 @@ Author: PhDr. Matej Lednár, PhD. (c) 2012
             }
             lineChecker[i] = tmp.join("");
             this.value = lineChecker.join("\n");            
-            lineStatus = false;   // line and all content were updated
+            lineStatus = false;   // line and content were updated
           }
         }
         if (lineStatus) {
